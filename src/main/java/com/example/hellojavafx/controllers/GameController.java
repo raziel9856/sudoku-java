@@ -143,9 +143,11 @@ public class GameController {
                 } else {
                     cellInput.setStyle("-fx-border-color: black; -fx-alignment: center;");
                 }
-                // Aplicar color de fondo #e2e2e2 a los subgrupos
-                if ((i / subGridSize + j / subGridSize) % 2 == 0) {
-                    cellInput.setStyle(cellInput.getStyle() + " -fx-background-color: #e2e2e2;");
+                if (size == 9) {
+                    // Aplicar color de fondo #e2e2e2 a los subgrupos
+                    if ((i / subGridSize + j / subGridSize) % 2 == 0) {
+                        cellInput.setStyle(cellInput.getStyle() + " -fx-background-color: #e2e2e2;");
+                    }
                 }
             }
         }
@@ -174,18 +176,21 @@ public class GameController {
                 colCell.setStyle("-fx-border-color: black; -fx-alignment: center; -fx-background-color: #b7b7b7;");
             }
         }
-        int subGridSize = (size == 6) ? 2 : 3;
-        int startRow = (row / subGridSize) * subGridSize;
-        int startCol = (col / 3) * 3;
 
-        for (int i = startRow; i < startRow + subGridSize; i++) {
-            for (int j = startCol; j < startCol + subGridSize; j++) {
-                TextField subGridCell = (TextField) paneBoard.getChildren().get(i * size + j);
-                int subGridCorrectValue = board.getCell(i, j).getCorrectValue();
-                if (!subGridCell.getText().equals(String.valueOf(subGridCorrectValue)) && !subGridCell.getText().equals("")) {
-                    subGridCell.setStyle("-fx-border-color: red; -fx-alignment: center;");
-                } else {
-                    subGridCell.setStyle("-fx-border-color: black; -fx-alignment: center; -fx-background-color: #b7b7b7;");
+        if (size == 9) {
+            int subGridSize = (size == 6) ? 2 : 3;
+            int startRow = (row / subGridSize) * subGridSize;
+            int startCol = (col / 3) * 3;
+
+            for (int i = startRow; i < startRow + subGridSize; i++) {
+                for (int j = startCol; j < startCol + subGridSize; j++) {
+                    TextField subGridCell = (TextField) paneBoard.getChildren().get(i * size + j);
+                    int subGridCorrectValue = board.getCell(i, j).getCorrectValue();
+                    if (!subGridCell.getText().equals(String.valueOf(subGridCorrectValue)) && !subGridCell.getText().equals("")) {
+                        subGridCell.setStyle("-fx-border-color: red; -fx-alignment: center;");
+                    } else {
+                        subGridCell.setStyle("-fx-border-color: black; -fx-alignment: center; -fx-background-color: #b7b7b7;");
+                    }
                 }
             }
         }

@@ -9,10 +9,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Representa la vista de bienvenida del juego de Sudoku.
+ */
 public class WelcomeView extends Stage {
 
     private static VBox instance;
 
+    /**
+     * Constructor de la clase WelcomeView.
+     *
+     * @throws IOException Si no se puede cargar el archivo FXML.
+     */
     public WelcomeView() throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/com/example/hellojavafx/welcome-view.fxml")
@@ -27,33 +35,20 @@ public class WelcomeView extends Stage {
         this.show();
     }
 
+    /**
+     * Obtiene la instancia de WelcomeView.
+     *
+     * @return La instancia de WelcomeView.
+     * @throws IOException Si no se puede crear la instancia.
+     */
     public static WelcomeView getInstance() throws IOException {
         return WelcomeViewHolder.INSTANCE = new WelcomeView();
     }
 
+    /**
+     * Clase estática para mantener la instancia de WelcomeView.
+     */
     private static class WelcomeViewHolder {
         private static WelcomeView INSTANCE;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

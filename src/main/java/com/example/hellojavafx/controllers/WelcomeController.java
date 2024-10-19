@@ -21,26 +21,9 @@ public class WelcomeController {
      * @param size El tamaño del tablero de Sudoku (6x6 o 9x9).
      */
     @FXML
-    public void startGame(ActionEvent event, int size) {
-        try {
-            GameView gameView = new GameView(size);
-            gameView.show();
-        } catch (IOException e) {
-            showAlert("Failed to start the game: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Muestra una alerta con el mensaje especificado.
-     *
-     * @param message El mensaje a mostrar en la alerta.
-     */
-    public void showAlert(String message) {
-        Alert errorAlert = new Alert(AlertType.ERROR);
-        errorAlert.setTitle("Error");
-        errorAlert.setHeaderText(null);
-        errorAlert.setContentText(message);
-        errorAlert.showAndWait();
+    public void startGame(ActionEvent event, int size) throws IOException {
+        GameView gameView = new GameView(size);
+        gameView.show();
     }
 
     /**
@@ -48,7 +31,7 @@ public class WelcomeController {
      *
      * @param actionEvent El evento de acción que desencadena el inicio del juego.
      */
-    public void startGameSix(ActionEvent actionEvent) {
+    public void startGameSix(ActionEvent actionEvent) throws IOException {
         startGame(actionEvent, 6);
     }
 
@@ -57,7 +40,7 @@ public class WelcomeController {
      *
      * @param actionEvent El evento de acción que desencadena el inicio del juego.
      */
-    public void startGameNine(ActionEvent actionEvent) {
+    public void startGameNine(ActionEvent actionEvent) throws IOException {
         startGame(actionEvent, 9);
     }
 }
