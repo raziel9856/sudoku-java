@@ -102,7 +102,7 @@ public class Board {
 
     private void removeCells() {
         Random random = new Random();
-        int blanks = (size == 6) ? 25 : 60;
+        int blanks = (size == 6) ? 10 : 60;
         for (int i = 0; i < blanks; i++) {
             int row, col;
             do {

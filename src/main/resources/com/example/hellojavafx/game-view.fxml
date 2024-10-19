@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="659.0" stylesheets="@css/cupertino-light.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="659.0" stylesheets="@css/cupertino-light.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="417.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="242.0" />
@@ -27,14 +27,32 @@
          <children>
             <VBox alignment="CENTER">
                <children>
-                  <GridPane prefHeight="200.0" prefWidth="200.0" fx:id="paneBoard" />
+                  <GridPane fx:id="paneBoard" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
          </children>
       </HBox>
-       <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+       <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
            <children>
-               <Label layoutX="40.0" layoutY="14.0" text="Nuevo Juego" />
+               <Label layoutX="174.0" layoutY="14.0" text="Nuevo Juego" />
+               <Button contentDisplay="GRAPHIC_ONLY" layoutX="224.0" layoutY="32.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="67.0" text="Button" onAction="#startGameNine">
+                   <graphic>
+                       <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@images/sudoku-9.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+               </Button>
+               <Button contentDisplay="GRAPHIC_ONLY" layoutX="134.0" layoutY="32.0"  mnemonicParsing="false" prefHeight="59.0" prefWidth="67.0" text="Button" onAction="#startGameSix">
+                   <graphic>
+                       <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@images/sudoku-6.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+               </Button>
            </children>
        </Pane>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
@@ -53,7 +71,9 @@
                   <Label text="/3" />
                </children>
             </HBox>
-            <Button fx:id="btnHelpMe" onAction="#getHelp" mnemonicParsing="false" text="Ayudame" />
+            <Button fx:id="btnHelpMe" mnemonicParsing="false" onAction="#getHelp" text="Ayudame" />
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" text="Instrucciones" onAction="#showInstructions"/>
          </children>
       </VBox>
    </children>
