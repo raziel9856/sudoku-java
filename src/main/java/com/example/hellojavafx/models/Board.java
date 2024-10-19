@@ -163,6 +163,24 @@ public class Board {
     private void removeCells() {
         Random random = new Random();
         int blanks = (size == 6) ? 10 : 60;
+        int rowSize = (size == 6) ? 2 : 3;
+        int colSize = 3;
+
+        // Asegurar que cada subgrupo tenga al menos 4 números
+        for (int startRow = 0; startRow < size; startRow += rowSize) {
+            for (int startCol = 0; startCol < size; startCol += colSize) {
+                int numbersToKeep = 4;
+                while (numbersToKeep > 0) {
+                    int row = startRow + random.nextInt(rowSize);
+                    int col = startCol + random.nextInt(colSize);
+                    if (this.cells[row][col].getValue() != 0) {
+                        numbersToKeep--;
+                    }
+                }
+            }
+        }
+
+        // Eliminar celdas adicionales hasta alcanzar el número deseado de celdas vacías
         for (int i = 0; i < blanks; i++) {
             int row, col;
             do {
