@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="369.0" spacing="10.0" style="-fx-background-color: white;" stylesheets="@css/primer-light.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellojavafx.controllers.WelcomeController">
+   <children>
+      <Label text="Bienvenido al juego de Sudoku" />
+      <Pane prefHeight="120.0" prefWidth="200.0">
+         <children>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="67.0" text="Button" onAction="#startGameSix">
+                <graphic>
+                    <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@images/sudoku-6.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+             <Button contentDisplay="GRAPHIC_ONLY" layoutX="119.0" layoutY="32.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="67.0" text="Button" onAction="#startGameNine">
+                 <graphic>
+                     <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="@images/sudoku-9.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+         </children>
+      </Pane>
+      <Label text="Escoge el nivel que quieres jugar" />
+   </children>
+</VBox>
